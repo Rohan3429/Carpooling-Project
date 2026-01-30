@@ -1,0 +1,1727 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Backend",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Bookings": {
+      "post": {
+        "tags": [
+          "Bookings"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Bookings/driver/{driverId}": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Bookings/passenger/{passengerId}": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Bookings/{id}": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Bookings/{id}/status": {
+      "put": {
+        "tags": [
+          "Bookings"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingStatusUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingStatusUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingStatusUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Maps/places": {
+      "get": {
+        "tags": [
+          "Maps"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Maps/route": {
+      "post": {
+        "tags": [
+          "Maps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RouteRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RouteRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RouteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rides": {
+      "post": {
+        "tags": [
+          "Rides"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RideResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RideResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RideResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Rides"
+        ],
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "passengers",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "originLat",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "originLng",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "destinationLat",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "destinationLng",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "maxDistanceKm",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RideResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RideResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RideResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserProfileRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserProfileRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/{id}/vehicles": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVehiclesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVehiclesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVehiclesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/{id}/payment-methods": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentMethodsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentMethodsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentMethodsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/{id}/settings": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/{id}/driver-profile": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DriverProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DriverProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DriverProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDriverProfileRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDriverProfileRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDriverProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DriverProfileResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DriverProfileResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DriverProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "userType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BookingCreateRequest": {
+        "type": "object",
+        "properties": {
+          "rideId": {
+            "type": "string",
+            "nullable": true
+          },
+          "passengerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "passengerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfPassengers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalFare": {
+            "type": "number",
+            "format": "double"
+          },
+          "upfrontPayment": {
+            "type": "number",
+            "format": "double"
+          },
+          "remainingPayment": {
+            "type": "number",
+            "format": "double"
+          },
+          "pickupLocation": {
+            "$ref": "#/components/schemas/RideLocationDto"
+          },
+          "dropoffLocation": {
+            "$ref": "#/components/schemas/RideLocationDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BookingResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "rideId": {
+            "type": "string",
+            "nullable": true
+          },
+          "driverId": {
+            "type": "string",
+            "nullable": true
+          },
+          "passengerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "passengerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfPassengers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalFare": {
+            "type": "number",
+            "format": "double"
+          },
+          "upfrontPayment": {
+            "type": "number",
+            "format": "double"
+          },
+          "remainingPayment": {
+            "type": "number",
+            "format": "double"
+          },
+          "pickupLocation": {
+            "$ref": "#/components/schemas/RideLocationDto"
+          },
+          "dropoffLocation": {
+            "$ref": "#/components/schemas/RideLocationDto"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAtUtc": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAtUtc": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BookingStatusUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DriverProfileResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "licenseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "licenseUploadUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankAccountName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "ifsc": {
+            "type": "string",
+            "nullable": true
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentMethod": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "details": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDefault": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterDriverProfileRequest": {
+        "type": "object",
+        "properties": {
+          "licenseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "licenseUploadUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankAccountName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "ifsc": {
+            "type": "string",
+            "nullable": true
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "userType": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferences": {
+            "type": "string",
+            "nullable": true
+          },
+          "profilePhotoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "driverProfile": {
+            "$ref": "#/components/schemas/RegisterDriverProfileRequest"
+          },
+          "vehicles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VehicleDetails"
+            },
+            "nullable": true
+          },
+          "paymentMethods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentMethod"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RideCreateRequest": {
+        "type": "object",
+        "properties": {
+          "driverId": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          },
+          "originLat": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "originLng": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationLat": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "destinationLng": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "departureTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "availableSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "farePerKm": {
+            "type": "number",
+            "format": "double"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/RidePreferences"
+          },
+          "isRecurring": {
+            "type": "boolean"
+          },
+          "recurringDays": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RideLocation": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RideLocationDto": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RidePreferences": {
+        "type": "object",
+        "properties": {
+          "hasAC": {
+            "type": "boolean"
+          },
+          "musicType": {
+            "type": "string",
+            "nullable": true
+          },
+          "smokingAllowed": {
+            "type": "boolean"
+          },
+          "petsAllowed": {
+            "type": "boolean"
+          },
+          "genderPreference": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RideResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "driverId": {
+            "type": "string",
+            "nullable": true
+          },
+          "driverName": {
+            "type": "string",
+            "nullable": true
+          },
+          "driverRating": {
+            "type": "number",
+            "format": "double"
+          },
+          "vehicle": {
+            "$ref": "#/components/schemas/VehicleDetails"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/RideLocation"
+          },
+          "destination": {
+            "$ref": "#/components/schemas/RideLocation"
+          },
+          "departureTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "availableSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "farePerKm": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalFare": {
+            "type": "number",
+            "format": "double"
+          },
+          "distanceKm": {
+            "type": "number",
+            "format": "double"
+          },
+          "estimatedDurationMinutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/RidePreferences"
+          },
+          "isRecurring": {
+            "type": "boolean"
+          },
+          "recurringDays": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAtUtc": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RouteRequest": {
+        "type": "object",
+        "properties": {
+          "originLat": {
+            "type": "number",
+            "format": "double"
+          },
+          "originLng": {
+            "type": "number",
+            "format": "double"
+          },
+          "destinationLat": {
+            "type": "number",
+            "format": "double"
+          },
+          "destinationLng": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDriverProfileRequest": {
+        "type": "object",
+        "properties": {
+          "licenseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "licenseUploadUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankAccountName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "ifsc": {
+            "type": "string",
+            "nullable": true
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdatePaymentMethodsRequest": {
+        "type": "object",
+        "properties": {
+          "paymentMethods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentMethod"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSettingsRequest": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "$ref": "#/components/schemas/UserSettings"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUserProfileRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferences": {
+            "type": "string",
+            "nullable": true
+          },
+          "profilePhotoUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateVehiclesRequest": {
+        "type": "object",
+        "properties": {
+          "vehicles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VehicleDetails"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "userType": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferences": {
+            "type": "string",
+            "nullable": true
+          },
+          "profilePhotoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VehicleDetails"
+            },
+            "nullable": true
+          },
+          "paymentMethods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentMethod"
+            },
+            "nullable": true
+          },
+          "settings": {
+            "$ref": "#/components/schemas/UserSettings"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserSettings": {
+        "type": "object",
+        "properties": {
+          "notificationsEnabled": {
+            "type": "boolean"
+          },
+          "marketingUpdates": {
+            "type": "boolean"
+          },
+          "darkMode": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VehicleDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "make": {
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "plateNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasAC": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
